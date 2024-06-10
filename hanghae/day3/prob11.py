@@ -1,8 +1,8 @@
 import sys
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 
-constellation = [list(map(int, sys.stdin.readline().strip().split())) for _ in range(n)]
+constellation = [list(map(int, sys.stdin.readline().strip().split())) for _ in range(N)]
 # 0 -> n
 constellation.sort(key=lambda x: (x[0], x[1]))
 
@@ -10,7 +10,7 @@ vector = []
 
 min_r, min_c, max_r, max_c = 100000, 100000, 0, 0
 
-for i in range(n - 1):
+for i in range(N - 1):
     r, c = constellation[i]
     nr, nc = constellation[i + 1]
 
@@ -23,9 +23,9 @@ def is_possible(r, c):
     return True
 
 
-m = int(sys.stdin.readline())
+M = int(sys.stdin.readline())
 
-stars = {tuple(map(int, sys.stdin.readline().strip().split())) for _ in range(m)}
+stars = {tuple(map(int, sys.stdin.readline().strip().split())) for _ in range(M)}
 answer = []
 
 for star in stars:
@@ -35,7 +35,7 @@ for star in stars:
 
     answer.append([r, c])
 
-    for i in range(n - 1):
+    for i in range(N - 1):
         nr = r + vector[i][0]
         nc = c + vector[i][1]
         t = (nr, nc)
@@ -48,7 +48,7 @@ for star in stars:
 
         answer.append([nr, nc])
 
-        if i == n - 2:
+        if i == N - 2:
             stop = True
 
     if stop:

@@ -2,17 +2,17 @@ import sys
 
 input = sys.stdin.readline
 
-n, m, r = list(map(int, input().strip().split()))
+N, M, r = list(map(int, input().strip().split()))
 
-board = [list(map(int, input().strip().split())) for _ in range(n)]
+board = [list(map(int, input().strip().split())) for _ in range(N)]
 
-state = [[0 for _ in range(m)] for _ in range(n)]
+state = [[0 for _ in range(M)] for _ in range(N)]
 
 
 def rotate(prev):
-    n_board = [[0 for _ in range(m)] for _ in range(n)]
+    n_board = [[0 for _ in range(M)] for _ in range(N)]
 
-    for i in range(min(n, m) // 2):
+    for i in range(min(N, M) // 2):
         shift_outline(i, i, n_board, i, prev)
 
     return n_board
@@ -35,12 +35,12 @@ def shift_outline(row, col, next_board, indent, prev):
 
 
 def is_forward(r, c, indent):
-    if not (0 + indent <= r < n - indent) or not (0 + indent <= c < m - indent):
+    if not (0 + indent <= r < N - indent) or not (0 + indent <= c < M - indent):
         return False
     return True
 
 
-lng = (n - 1 + m - 1) * 2
+lng = (N - 1 + M - 1) * 2
 dp = [[] for _ in range(lng)]
 dp[0] = board
 
@@ -54,10 +54,10 @@ set_dp(lng - 1)
 
 
 def get_rotate_r():
-    n_board = [[0 for _ in range(m)] for _ in range(n)]
+    n_board = [[0 for _ in range(M)] for _ in range(N)]
     dc = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
-    for i in range(min(n, m) // 2):
+    for i in range(min(N, M) // 2):
         row, col = i, i
         idx = 0
         while idx < 4:

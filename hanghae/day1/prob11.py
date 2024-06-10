@@ -1,7 +1,7 @@
 import sys
 import math
 
-n = int(sys.stdin.readline().rstrip())
+N = int(sys.stdin.readline().rstrip())
 cnt = [0]
 
 
@@ -31,7 +31,7 @@ def pow(num, i):
 
 
 idx = 1
-while idx < len(str(n)) + 1:
+while idx < len(str(N)) + 1:
     cnt.append(cnt[idx - 1] * 10 + int(pow(10, idx - 1)))
     idx += 1
 
@@ -41,9 +41,9 @@ digit_cnt = [0 for _ in range(10)]
 # 현재 cnt는 각 자리수별로 가지게되는 최대값으로 맞춰짐 / 0 제외
 c_digit = 1
 
-while n > 0:
+while N > 0:
     s = 0
-    c = n % 10
+    c = N % 10
 
     while s <= c:
         if s != 0:
@@ -56,6 +56,6 @@ while n > 0:
         s += 1
 
     c_digit += 1
-    n //= 10
+    N //= 10
 
 print(digit_cnt)

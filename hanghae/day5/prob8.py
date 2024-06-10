@@ -2,20 +2,20 @@ import sys
 
 input = sys.stdin.readline
 
-n, m, r = list(map(int, input().strip().split()))
+N, M, r = list(map(int, input().strip().split()))
 
-board = [list(map(int, input().strip().split())) for _ in range(n)]
-dp = [[] for _ in range(n * m)]
+board = [list(map(int, input().strip().split())) for _ in range(N)]
+dp = [[] for _ in range(N * M)]
 dp[0] = board
 
 
 def rotate():
     global board
 
-    n_board = [[0 for _ in range(m)] for _ in range(n)]
+    n_board = [[0 for _ in range(M)] for _ in range(N)]
 
     # 바깥부터 1칸씩 들어가며 돌려줍니다
-    for i in range(min(n, m) // 2):
+    for i in range(min(N, M) // 2):
         shift(i, i, n_board, i)
     board = n_board
 
@@ -43,7 +43,7 @@ def shift(row, col, next_board, indent):
 
 
 def is_forward(r, c, indent):
-    if not (indent <= r < n - indent) or not (indent <= c < m - indent):
+    if not (indent <= r < N - indent) or not (indent <= c < M - indent):
         return False
     return True
 

@@ -3,15 +3,15 @@ from collections import deque
 
 input = sys.stdin.readline
 
-n = int(input())
+N = int(input())
 
 enter_q = deque()
 out_q = deque()
 
-for i in range(n):
+for i in range(N):
     enter_q.append(input().strip())
 
-for i in range(n):
+for i in range(N):
     out_q.append(input().strip())
 
 

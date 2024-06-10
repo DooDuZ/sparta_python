@@ -2,12 +2,12 @@
 
 import sys
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 
 numbers = []
 answer = []
 
-for _ in range(n):
+for _ in range(N):
     cmd = list(map(int, sys.stdin.readline().rstrip().split()))
 
     if len(cmd) == 1:
@@ -27,8 +27,8 @@ for _ in range(n):
 
     numbers.append(cmd[1])
 
-for n in answer:
-    print(n)
+for N in answer:
+    print(N)
 print(" ".join(str(x) for x in numbers))
 
 """

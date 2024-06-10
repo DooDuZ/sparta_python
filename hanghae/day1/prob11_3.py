@@ -1,7 +1,7 @@
 import sys
 
 s = sys.stdin.readline().strip()
-n = int(s)
+N = int(s)
 
 # 자릿수별 등장 횟수 저장 리스트
 digit = [0 for _ in range(10)]

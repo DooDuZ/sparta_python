@@ -1,12 +1,12 @@
 import sys
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 
 # 인사한 유저를 저장합니다
 kind_user = set()
 cnt = 0
 
-for i in range(n):
+for i in range(N):
     log = sys.stdin.readline().rstrip()
 
     if log == "ENTER":

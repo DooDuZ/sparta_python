@@ -2,7 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
-m = int(input())
+M = int(input())
 numbers = [[0]]
 numbers[0].extend(list(map(int, input().strip().split())))
 
@@ -11,7 +11,7 @@ q = int(input())
 
 def set_numbers():
     for i in range(1, 20):
-        for j in range(m + 1):
+        for j in range(M + 1):
             numbers[i][j] = numbers[i - 1][numbers[i - 1][j]]
 
 
@@ -41,7 +41,7 @@ def get_minus(n):
 
 # 50만의 log2 == 19.xxxxx
 for i in range(20):
-    numbers.append([0 for _ in range(m + 1)])
+    numbers.append([0 for _ in range(M + 1)])
 
 
 set_numbers()
@@ -49,8 +49,8 @@ set_numbers()
 answer = []
 
 for i in range(q):
-    n, x = list(map(int, input().strip().split()))
-    answer.append(get_f(n, x))
+    N, x = list(map(int, input().strip().split()))
+    answer.append(get_f(N, x))
 
 
 print("\n".join(str(x) for x in answer))

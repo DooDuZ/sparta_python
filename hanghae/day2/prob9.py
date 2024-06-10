@@ -1,11 +1,11 @@
 import sys
 from collections import defaultdict
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 answer = []
-SYJKGW = 'SYJKGW'
+SYJKGW = "SYJKGW"
 
-for i in range(n):
+for i in range(N):
     line = list(map(int, sys.stdin.readline().split()))
 
     army = defaultdict(int)
@@ -24,4 +24,4 @@ for i in range(n):
     if not is_win:
         answer.append(SYJKGW)
 
-print('\n'.join(answer))
+print("\n".join(answer))

@@ -5,7 +5,7 @@ input = sys.stdin.readline
 O, I, IO = "O", "I", "IO"
 dc = [I, O]
 
-n = int(input())
+N = int(input())
 
 
 # P(n) 얻기
@@ -13,7 +13,7 @@ def get_pattern(n):
     return "".join(["".join([IO for _ in range(n)]), I])
 
 
-pattern = get_pattern(n)
+pattern = get_pattern(N)
 lng = int(input())
 s = input().strip()
 
@@ -33,8 +33,8 @@ for i, char in enumerate(s):
 
         pn //= 2
         # pn이 탐색 패턴보다 긴 경우에만 추가
-        if pn >= n:
-            cnt += pn - n + 1
+        if pn >= N:
+            cnt += pn - N + 1
         # 탐색 정보 초기화
         pn = 0
         cur = I

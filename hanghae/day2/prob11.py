@@ -1,13 +1,13 @@
 import sys
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 MOD = 1_000_000_007
 
-names = [sys.stdin.readline().rstrip() for _ in range(n)]
+names = [sys.stdin.readline().rstrip() for _ in range(N)]
 facto = [0 for _ in range(3000)]
 
 # 정렬된 상태에서 시작해야 같은 패턴을 가진 문자를 길이별로 잘라낼 수 있음
-names.sort();
+names.sort()
 
 
 def count_of_sort(s, e, lng):
@@ -57,4 +57,4 @@ def multiple(a, b):
     return a * b % MOD
 
 
-print(count_of_sort(0, n, 0))
+print(count_of_sort(0, N, 0))

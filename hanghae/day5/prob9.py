@@ -42,14 +42,14 @@ class SegmentTree:
             return ret
 
 
-n, m = list(map(int, input().strip().split()))
-numbers = [int(input()) for _ in range(n)]
+N, M = list(map(int, input().strip().split()))
+numbers = [int(input()) for _ in range(N)]
 
 answer = []
 
 segmentTree = SegmentTree(numbers)
 
-for i in range(m):
+for i in range(M):
     a, b = list(map(int, input().strip().split()))
     answer.append(segmentTree.root.search(a - 1, b - 1))
 

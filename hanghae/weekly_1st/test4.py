@@ -4,9 +4,9 @@ from collections import deque
 
 input = sys.stdin.readline
 
-n, m = list(map(int, input().strip().split()))
+N, M = list(map(int, input().strip().split()))
 
-city = [list(map(int, input().strip().split())) for _ in range(n)]
+city = [list(map(int, input().strip().split())) for _ in range(N)]
 dr = [1, -1, 0, 0]
 dc = [0, 0, 1, -1]
 
@@ -21,11 +21,11 @@ for i, row in enumerate(city):
         elif dot == 2:
             shops.append((i, j))
 
-comb = list(combinations(shops, m))
+comb = list(combinations(shops, M))
 
 
 def is_possible(r, c):
-    if (0 <= r < n) and (0 <= c < n):
+    if (0 <= r < N) and (0 <= c < N):
         return True
     return False
 

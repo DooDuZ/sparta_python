@@ -2,7 +2,7 @@
 
 import sys
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 scores = list(map(int, sys.stdin.readline().split()))
 
 scores.sort()

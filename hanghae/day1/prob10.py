@@ -1,17 +1,18 @@
 import sys
 from collections import deque
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 
 msg = dict()
 m_list = list()
 answer = []
 
+
 # https://www.acmicpc.net/board/view/104921
 # 연속된 자음의 최대 개수 리턴
 def check_consonant(message):
-    vowel = 'AEIOUYaeiouy'
-    consonant = 'bcdfghjklmnpqrstvwxzABCDFGHJKLMNPQRSTVWXZ'
+    vowel = "AEIOUYaeiouy"
+    consonant = "bcdfghjklmnpqrstvwxzABCDFGHJKLMNPQRSTVWXZ"
 
     max_cnt = 0
     cnt = 0
@@ -27,14 +28,14 @@ def check_consonant(message):
     return max_cnt
 
 
-for i in range(n):
-    m = sys.stdin.readline()
-    m_list.append([m, check_consonant(m)])
+for i in range(N):
+    M = sys.stdin.readline()
+    m_list.append([M, check_consonant(M)])
 
 ten_lines = deque()
 
-for m in m_list:
-    message, cnt = m
+for M in m_list:
+    message, cnt = M
 
     flag = False
 
@@ -54,7 +55,7 @@ for m in m_list:
             flag = True
 
     # 기록 덱에 현재 메시지 append
-    ten_lines.append(m)
+    ten_lines.append(M)
 
     if cnt >= 6 or msg[message] >= 3:
         flag = True
@@ -64,11 +65,11 @@ for m in m_list:
         d_m, d_c = ten_lines.popleft()
         msg[d_m] -= 1
 
-    answer.append('y' if not flag else 'n')
+    answer.append("y" if not flag else "n")
 
-print('\n'.join(str(x) for x in answer))
+print("\n".join(str(x) for x in answer))
 
-'''
+"""
 12
 hello
 how r u?
@@ -82,4 +83,4 @@ where r u from?
 kjhh kh kgkjhg jhg
 very good
 it is very cold here.
-'''
+"""

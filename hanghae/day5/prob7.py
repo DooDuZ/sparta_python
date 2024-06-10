@@ -2,7 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
-n = int(input())
+N = int(input())
 
 dr = [0, 0, 1, -1]
 dc = [1, -1, 0, 0]
@@ -65,7 +65,7 @@ small = get_small_area()
 
 area = (max_r - min_r) * (max_c - min_c) - small
 
-print(area * n)
+print(area * N)
 
 """
 7

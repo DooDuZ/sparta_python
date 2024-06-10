@@ -1,4 +1,4 @@
-'''
+"""
 재귀로 푸는 경우 최대 깊이 3000까지 발생할 수 있음
 BOJ python 재귀 깊이 제한 1000
 재귀 제한 풀고 진행하면 메모리 초과 발생
@@ -6,25 +6,25 @@ BOJ python 재귀 깊이 제한 1000
 java 재귀 방식 : 메모리 = 44424kb, 응답 속도 = 544ms
 python 반복문 사용 : 메모리 = 40800kb, 응답 속도 = 4380ms
 pypy3 반복문 사용 : 메모리 200832kb, 응답 속도 = 940ms
-'''
+"""
 
 import sys
 from collections import deque
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 MOD = 1_000_000_007
-names = [sys.stdin.readline().rstrip() for _ in range(n)]
+names = [sys.stdin.readline().rstrip() for _ in range(N)]
 facto = [0 for _ in range(3000)]
 
 facto[0] = 1
 facto[1] = 1
 
 # 정렬된 상태에서 시작해야 같은 패턴을 가진 문자를 길이별로 잘라낼 수 있음
-names.sort();
+names.sort()
 
 # q생성
 queue = deque()
-queue.append([0, n, 0])
+queue.append([0, N, 0])
 
 
 def count_of_sort(q):

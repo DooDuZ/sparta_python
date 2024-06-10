@@ -4,7 +4,7 @@ from collections import defaultdict
 
 input = sys.stdin.readline
 
-n = int(input())
+N = int(input())
 word = input().strip()
 
 alpha = defaultdict(int)
@@ -13,7 +13,7 @@ for w in word:
     alpha[w] = alpha[w] + 1
 
 answer = 0
-for i in range(n - 1):
+for i in range(N - 1):
     a = defaultdict(int)
     w = input().strip()
 

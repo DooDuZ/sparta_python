@@ -1,16 +1,16 @@
 import sys
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 
 # 추가 제거 빠르도록
 records = set()
 
-for i in range(n):
+for i in range(N):
     name, status = sys.stdin.readline().rstrip().split()
 
-    if status == 'enter':
+    if status == "enter":
         records.add(name)
     else:
         records.remove(name)
 
-print('\n'.join(n for n in sorted(list(records), reverse=True)))
+print("\n".join(N for N in sorted(list(records), reverse=True)))

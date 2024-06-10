@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 O, I, IO = "O", "I", "IO"
 
-n = int(input())
+N = int(input())
 
 
 # 초기 패턴
@@ -12,7 +12,7 @@ def get_pattern(n):
     return "".join(["".join([IO for _ in range(n)]), I])
 
 
-pattern = get_pattern(n)
+pattern = get_pattern(N)
 lng = int(input())
 s = input().strip()
 
@@ -27,8 +27,8 @@ for c in convert_string:
         if c == O:
             pn -= 1
 
-        if pn >= n:
-            cnt += pn - n + 1
+        if pn >= N:
+            cnt += pn - N + 1
 
         pn = 0
 

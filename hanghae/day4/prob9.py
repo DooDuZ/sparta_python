@@ -3,15 +3,15 @@ from collections import deque
 
 input = sys.stdin.readline
 
-n, m = list(map(int, input().strip().split()))
-cells = [input().strip() for _ in range(n)]
+N, M = list(map(int, input().strip().split()))
+cells = [input().strip() for _ in range(N)]
 words = []
 # 왼쪽 위부터 모든 정점에서 출발한다면 4방향 체크를 할 필요가 없음
 down, right = (1, 0), (0, 1)
 
 
 def init_visited():
-    return [[True for _ in range(m)] for _ in range(n)]
+    return [[True for _ in range(M)] for _ in range(N)]
 
 
 def get_words(r, c, v, d):
@@ -34,7 +34,7 @@ def get_words(r, c, v, d):
 
 
 def is_possible(r, c, v):
-    if (0 <= r < n) and (0 <= c < m) and v[r][c] and cells[r][c] != "#":
+    if (0 <= r < N) and (0 <= c < M) and v[r][c] and cells[r][c] != "#":
         return True
     return False
 
@@ -42,8 +42,8 @@ def is_possible(r, c, v):
 def search(direction):
     v = init_visited()
     # down 먼저 탐색, 동시에 하면 visited 배열 충돌
-    for i in range(n):
-        for j in range(m):
+    for i in range(N):
+        for j in range(M):
             if v[i][j] and cells[i][j] != "#":
                 v[i][j] = False
 

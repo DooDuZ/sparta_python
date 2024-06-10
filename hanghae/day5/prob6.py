@@ -2,11 +2,11 @@ import sys
 
 input = sys.stdin.readline
 
-n, m = list(map(int, input().strip().split()))
+N, M = list(map(int, input().strip().split()))
 
 lng = 0
 
-board = [[int(x) for x in input().strip()] for _ in range(n)]
+board = [[int(x) for x in input().strip()] for _ in range(N)]
 
 
 # r,c = 좌표, l = 현재 좌표에서 가능한 최대 크기
@@ -23,10 +23,10 @@ def is_square(r, c, l):
 
 
 # 모든 정점 탐색
-for i in range(n):
-    for j in range(m):
+for i in range(N):
+    for j in range(M):
         # 현재 정점에서 가능한 정사각형의 최대 크기
-        l = min(n - i - 1, m - j - 1)
+        l = min(N - i - 1, M - j - 1)
         # 가능한 최대 길이가 탐색한 최대 길이보다 짧다면 continue
         if l < lng:
             continue

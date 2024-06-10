@@ -2,13 +2,13 @@ import sys
 
 input = sys.stdin.readline
 
-n, m = list(map(int, input().strip().split()))
+N, M = list(map(int, input().strip().split()))
 
-rotate = [[] for _ in range(m)]
+rotate = [[] for _ in range(M)]
 
-for _ in range(n):
+for _ in range(N):
     s = input().strip()
-    for i in range(m):
+    for i in range(M):
         rotate[i].append(s[i])
 
 # 입력된 문자를 돌려서 세로로 저장한다
@@ -22,7 +22,7 @@ def binary_search(start, end):
 
     mid = (start + end) // 2
     # 중간부터 끝까지 중복이 없다면 시작점을 중간 뒤로 밀어준다
-    if check_duplicate(mid, n):
+    if check_duplicate(mid, N):
         start = mid + 1
     # 중복이 있었다면 끝점 당겨오기
     else:
@@ -35,7 +35,7 @@ def binary_search(start, end):
 def check_duplicate(s, e):
     words = set()
 
-    for i in range(m):
+    for i in range(M):
         w = vertical[i][s:e]
         if w in words:
             return False
@@ -44,4 +44,4 @@ def check_duplicate(s, e):
     return True
 
 
-print(binary_search(0, n) - 1)
+print(binary_search(0, N) - 1)

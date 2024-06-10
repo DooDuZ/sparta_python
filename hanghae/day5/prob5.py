@@ -2,14 +2,14 @@ import sys
 
 input = sys.stdin.readline
 
-n, m = list(map(int, input().strip().split()))
+N, M = list(map(int, input().strip().split()))
 
 dc = ["W", "B"]
 
 SIZE = 8
 change = 64
 
-board = [input().strip() for _ in range(n)]
+board = [input().strip() for _ in range(N)]
 
 
 def check_board(r, c, color):
@@ -30,8 +30,8 @@ def check_board(r, c, color):
 
 
 # 8*8을 포함할 수 있는 모든 정점 탐색
-for i in range(n - SIZE + 1):
-    for j in range(m - SIZE + 1):
+for i in range(N - SIZE + 1):
+    for j in range(M - SIZE + 1):
         change = min(change, check_board(i, j, 0), check_board(i, j, 1))
 
 print(change)
