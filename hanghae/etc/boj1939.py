@@ -1,6 +1,7 @@
 # 멘토님 추천 문제
 # BOJ 1939 중량 제한
 # 그래프의 일반적인 최소 비용 문제
+# 다익스트라 사용
 
 import sys
 from heapq import *
@@ -47,6 +48,7 @@ def solution(params):
 
         while heap:
             c, v = heappop(heap)
+
             c *= -1
             if costs[v] != c:
                 continue
