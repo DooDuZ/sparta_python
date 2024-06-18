@@ -31,11 +31,7 @@ def solution(params):
             + abs(start_node[1] - end_node[1]) ** 2
         ) ** (1 / 2)
 
-        if d > 10:
-            if d <= 50:
-                d = 10
-            else:
-                d -= 40
+        d = min(d, abs(50 - d) + 10)
 
         return d / 5
 
