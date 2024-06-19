@@ -4,6 +4,7 @@ input = sys.stdin.readline
 
 
 def get_input():
+
     params = []
 
     return params
@@ -14,6 +15,4 @@ def solution(params):
 
 
 if __name__ == "__main__":
-    params = get_input()
-    for param in params:
-        print(solution(param))
+    print(solution(get_input()))
