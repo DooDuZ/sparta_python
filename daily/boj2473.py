@@ -11,6 +11,7 @@ def get_input():
     return [n, numbers]
 
 
+# test
 def solution(params):
     def binary_search(target, visited):
         left = 0
