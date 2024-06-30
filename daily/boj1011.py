@@ -21,42 +21,17 @@ def solution(param):
 
     dist = y - x
 
-    def sum_target(number):
-        return number * (number + 1) // 2
+    cnt = 0
+    lng = 1
+    total = 0
 
-    def binary_search():
-        left = 0
-        right = dist
+    while total < dist:
+        cnt += 1
+        total += lng
+        if cnt % 2 == 0:
+            lng += 1
 
-        target = dist // 2
-
-        while left <= right:
-            mid = (left + right) // 2
-
-            if sum_target(mid) < target:
-                left = mid + 1
-            else:
-                right = mid - 1
-
-        return left
-
-    answer = binary_search()
-
-    num = sum_target(answer)
-
-    if num * 2 > dist:
-        if sum_target(answer - 1) == dist - num:
-            answer *= 2
-            answer -= 1
-        else:
-            answer *= 2
-    elif num * 2 < dist:
-        answer *= 2
-        answer += 1
-    else:
-        answer *= 2
-
-    return answer
+    return cnt
 
 
 if __name__ == "__main__":
@@ -65,14 +40,75 @@ if __name__ == "__main__":
 
 
 """
-1
-0 10
-
-
-1
+5
+0 1
+0 2
+0 3
+0 4
 0 5
 
-1
+30
+0 1
+0 2
+0 3
+0 4
+0 5
 0 6
+0 7
+0 8
+0 9
+0 10
+0 11
+0 12
+0 13
+0 14
+0 15
+0 16
+0 17
+0 18
+0 19
+0 20
+0 21
+0 22
+0 23
+0 24
+0 25
+0 26
+0 27
+0 28
+0 29
+0 30
+
+ans :
+1
+2
+3
+3
+4
+4
+5
+5
+5
+6
+6
+6
+7
+7
+7
+7
+8
+8
+8
+8
+9
+9
+9
+9
+9
+10
+10
+10
+10
+10
 
 """
