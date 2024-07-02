@@ -1,5 +1,4 @@
 # BOJ 2668 숫자 고르기
-
 import sys
 
 input = sys.stdin.readline
@@ -27,8 +26,10 @@ def solution(params):
 
     for i in range(1, n + 1):
         cur = i
+
         up_set = set()
         down_set = set()
+
         while visited[cur]:
             visited[cur] = False
             up_set.add(cur)
