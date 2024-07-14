@@ -1,4 +1,4 @@
-# BOJ 16946 벽 부수고 이동하기 2
+# BOJ 16946 벽 부수고 이동하기 4
 import sys
 from collections import deque
 
