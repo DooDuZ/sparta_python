@@ -5,7 +5,6 @@ input = sys.stdin.readline
 
 
 def get_input():
-
     n = int(input())
 
     student_ids = []
@@ -21,7 +20,7 @@ def solution(params):
 
     lng = len(str(student_ids[0]))
 
-    for i in range(lng + 1):
+    for i in range(1, lng + 1):
         cnt_set = set()
 
         for student_id in student_ids:
