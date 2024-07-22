@@ -14,12 +14,20 @@ def get_input():
 
 
 def solution(params):
+    def shift(numbers, idx):
+        for i in range(n - 1, idx, -1):
+            numbers[i] = numbers[i - 1]
+
     n, taller = params
 
-    answer = []
+    answer = [0 for _ in range(n)]
 
     for height in range(n - 1, -1, -1):
-        answer.insert(taller[height], height + 1)
+        idx = taller[height]
+        if answer[idx] != 0:
+            shift(answer, idx)
+
+        answer[idx] = height + 1
 
     return answer
 
