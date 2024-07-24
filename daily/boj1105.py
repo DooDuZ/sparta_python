@@ -1,6 +1,5 @@
 # BOJ 1105 팔
 import sys
-from collections import Counter
 
 input = sys.stdin.readline
 
